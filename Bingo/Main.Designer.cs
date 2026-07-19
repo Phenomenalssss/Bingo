@@ -66,9 +66,10 @@
             this.QuitLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.QuitLabel.Font = new System.Drawing.Font("Montserrat Black", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.QuitLabel.ForeColor = System.Drawing.Color.White;
-            this.QuitLabel.Location = new System.Drawing.Point(102, 725);
+            this.QuitLabel.Location = new System.Drawing.Point(69, 635);
+            this.QuitLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.QuitLabel.Name = "QuitLabel";
-            this.QuitLabel.Size = new System.Drawing.Size(367, 62);
+            this.QuitLabel.Size = new System.Drawing.Size(250, 42);
             this.QuitLabel.TabIndex = 0;
             this.QuitLabel.Text = "Выйти из игры";
             this.QuitLabel.Click += new System.EventHandler(this.QuitLabel_Click);
@@ -82,9 +83,10 @@
             this.PlayLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PlayLabel.Font = new System.Drawing.Font("Montserrat Black", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.PlayLabel.ForeColor = System.Drawing.Color.White;
-            this.PlayLabel.Location = new System.Drawing.Point(102, 646);
+            this.PlayLabel.Location = new System.Drawing.Point(69, 584);
+            this.PlayLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.PlayLabel.Name = "PlayLabel";
-            this.PlayLabel.Size = new System.Drawing.Size(183, 62);
+            this.PlayLabel.Size = new System.Drawing.Size(124, 42);
             this.PlayLabel.TabIndex = 1;
             this.PlayLabel.Text = "Играть";
             this.PlayLabel.Click += new System.EventHandler(this.PlayLabel_Click);
@@ -97,9 +99,10 @@
             this.BingoLabel.BackColor = System.Drawing.Color.Transparent;
             this.BingoLabel.Font = new System.Drawing.Font("Good Vibes Pro", 150F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BingoLabel.ForeColor = System.Drawing.Color.White;
-            this.BingoLabel.Location = new System.Drawing.Point(-2, 217);
+            this.BingoLabel.Location = new System.Drawing.Point(0, 305);
+            this.BingoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.BingoLabel.Name = "BingoLabel";
-            this.BingoLabel.Size = new System.Drawing.Size(858, 416);
+            this.BingoLabel.Size = new System.Drawing.Size(572, 277);
             this.BingoLabel.TabIndex = 2;
             this.BingoLabel.Text = "Bingo";
             // 
@@ -109,9 +112,10 @@
             this.FootballEditionLabel.BackColor = System.Drawing.Color.Transparent;
             this.FootballEditionLabel.Font = new System.Drawing.Font("Inter", 20F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FootballEditionLabel.ForeColor = System.Drawing.Color.White;
-            this.FootballEditionLabel.Location = new System.Drawing.Point(150, 538);
+            this.FootballEditionLabel.Location = new System.Drawing.Point(101, 514);
+            this.FootballEditionLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.FootballEditionLabel.Name = "FootballEditionLabel";
-            this.FootballEditionLabel.Size = new System.Drawing.Size(319, 57);
+            this.FootballEditionLabel.Size = new System.Drawing.Size(217, 39);
             this.FootballEditionLabel.TabIndex = 3;
             this.FootballEditionLabel.Text = "Football Edition";
             // 
@@ -122,9 +126,10 @@
             this.BackLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BackLabel.Font = new System.Drawing.Font("Montserrat Black", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.BackLabel.ForeColor = System.Drawing.Color.White;
-            this.BackLabel.Location = new System.Drawing.Point(36, 997);
+            this.BackLabel.Location = new System.Drawing.Point(25, 990);
+            this.BackLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.BackLabel.Name = "BackLabel";
-            this.BackLabel.Size = new System.Drawing.Size(163, 62);
+            this.BackLabel.Size = new System.Drawing.Size(110, 42);
             this.BackLabel.TabIndex = 4;
             this.BackLabel.Text = "Назад";
             this.BackLabel.Visible = false;
@@ -138,9 +143,10 @@
             this.FootballEditionSmallLabel.BackColor = System.Drawing.Color.Transparent;
             this.FootballEditionSmallLabel.Font = new System.Drawing.Font("Inter", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FootballEditionSmallLabel.ForeColor = System.Drawing.Color.White;
-            this.FootballEditionSmallLabel.Location = new System.Drawing.Point(80, 178);
+            this.FootballEditionSmallLabel.Location = new System.Drawing.Point(53, 333);
+            this.FootballEditionSmallLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.FootballEditionSmallLabel.Name = "FootballEditionSmallLabel";
-            this.FootballEditionSmallLabel.Size = new System.Drawing.Size(159, 28);
+            this.FootballEditionSmallLabel.Size = new System.Drawing.Size(110, 21);
             this.FootballEditionSmallLabel.TabIndex = 6;
             this.FootballEditionSmallLabel.Text = "Football Edition";
             this.FootballEditionSmallLabel.Visible = false;
@@ -151,9 +157,10 @@
             this.BingoSmallLabel.BackColor = System.Drawing.Color.Transparent;
             this.BingoSmallLabel.Font = new System.Drawing.Font("Good Vibes Pro", 75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BingoSmallLabel.ForeColor = System.Drawing.Color.White;
-            this.BingoSmallLabel.Location = new System.Drawing.Point(12, 9);
+            this.BingoSmallLabel.Location = new System.Drawing.Point(8, 223);
+            this.BingoSmallLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.BingoSmallLabel.Name = "BingoSmallLabel";
-            this.BingoSmallLabel.Size = new System.Drawing.Size(428, 208);
+            this.BingoSmallLabel.Size = new System.Drawing.Size(287, 139);
             this.BingoSmallLabel.TabIndex = 5;
             this.BingoSmallLabel.Text = "Bingo";
             this.BingoSmallLabel.Visible = false;
@@ -165,9 +172,10 @@
             this.DifficultLabel.Cursor = System.Windows.Forms.Cursors.Default;
             this.DifficultLabel.Font = new System.Drawing.Font("Montserrat Black", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.DifficultLabel.ForeColor = System.Drawing.Color.White;
-            this.DifficultLabel.Location = new System.Drawing.Point(36, 342);
+            this.DifficultLabel.Location = new System.Drawing.Point(24, 428);
+            this.DifficultLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.DifficultLabel.Name = "DifficultLabel";
-            this.DifficultLabel.Size = new System.Drawing.Size(648, 62);
+            this.DifficultLabel.Size = new System.Drawing.Size(440, 42);
             this.DifficultLabel.TabIndex = 7;
             this.DifficultLabel.Text = "Выберете сложность игры:";
             this.DifficultLabel.Visible = false;
@@ -178,17 +186,18 @@
             this.EasyRadioButton.BackColor = System.Drawing.Color.Transparent;
             this.EasyRadioButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.EasyRadioButton.Font = new System.Drawing.Font("Inter", 20F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.EasyRadioButton.ForeColor = System.Drawing.Color.Transparent;
-            this.EasyRadioButton.Location = new System.Drawing.Point(47, 407);
+            this.EasyRadioButton.ForeColor = System.Drawing.Color.White;
+            this.EasyRadioButton.Location = new System.Drawing.Point(31, 471);
+            this.EasyRadioButton.Margin = new System.Windows.Forms.Padding(2);
             this.EasyRadioButton.Name = "EasyRadioButton";
-            this.EasyRadioButton.Size = new System.Drawing.Size(407, 61);
+            this.EasyRadioButton.Size = new System.Drawing.Size(278, 43);
             this.EasyRadioButton.TabIndex = 8;
             this.EasyRadioButton.Text = "лёгкая сложность";
             this.EasyRadioButton.UseVisualStyleBackColor = false;
             this.EasyRadioButton.Visible = false;
             this.EasyRadioButton.CheckedChanged += new System.EventHandler(this.StartGame_CheckedChanged);
             this.EasyRadioButton.MouseEnter += new System.EventHandler(this.EasyRadioButton_MouseEnter);
-            this.EasyRadioButton.MouseLeave += new System.EventHandler(this.EasyRadioButton_MouseEnter);
+            this.EasyRadioButton.MouseLeave += new System.EventHandler(this.EasyRadioButton_MouseLeave);
             // 
             // EasyLabel
             // 
@@ -196,9 +205,10 @@
             this.EasyLabel.BackColor = System.Drawing.Color.Transparent;
             this.EasyLabel.Font = new System.Drawing.Font("Inter", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.EasyLabel.ForeColor = System.Drawing.Color.White;
-            this.EasyLabel.Location = new System.Drawing.Point(80, 471);
+            this.EasyLabel.Location = new System.Drawing.Point(53, 512);
+            this.EasyLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.EasyLabel.Name = "EasyLabel";
-            this.EasyLabel.Size = new System.Drawing.Size(573, 28);
+            this.EasyLabel.Size = new System.Drawing.Size(402, 21);
             this.EasyLabel.TabIndex = 9;
             this.EasyLabel.Text = "(одна любая линия - вертикальная или горизонтальная)";
             this.EasyLabel.Visible = false;
@@ -209,9 +219,10 @@
             this.AverageLabel.BackColor = System.Drawing.Color.Transparent;
             this.AverageLabel.Font = new System.Drawing.Font("Inter", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.AverageLabel.ForeColor = System.Drawing.Color.White;
-            this.AverageLabel.Location = new System.Drawing.Point(80, 581);
+            this.AverageLabel.Location = new System.Drawing.Point(53, 584);
+            this.AverageLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.AverageLabel.Name = "AverageLabel";
-            this.AverageLabel.Size = new System.Drawing.Size(543, 28);
+            this.AverageLabel.Size = new System.Drawing.Size(386, 21);
             this.AverageLabel.TabIndex = 11;
             this.AverageLabel.Text = "(большой квадрат, малый квадрат, две линии, буква)";
             this.AverageLabel.Visible = false;
@@ -223,15 +234,15 @@
             this.AverageRadioButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AverageRadioButton.Font = new System.Drawing.Font("Inter", 20F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.AverageRadioButton.ForeColor = System.Drawing.Color.Transparent;
-            this.AverageRadioButton.Location = new System.Drawing.Point(47, 517);
+            this.AverageRadioButton.Location = new System.Drawing.Point(31, 542);
+            this.AverageRadioButton.Margin = new System.Windows.Forms.Padding(2);
             this.AverageRadioButton.Name = "AverageRadioButton";
-            this.AverageRadioButton.Size = new System.Drawing.Size(439, 61);
+            this.AverageRadioButton.Size = new System.Drawing.Size(298, 43);
             this.AverageRadioButton.TabIndex = 10;
             this.AverageRadioButton.Text = "средняя сложность";
             this.AverageRadioButton.UseVisualStyleBackColor = false;
             this.AverageRadioButton.Visible = false;
             this.AverageRadioButton.CheckedChanged += new System.EventHandler(this.AverageRadioButton_CheckedChanged);
-            this.AverageRadioButton.Click += new System.EventHandler(this.AverageRadioButton_Click);
             this.AverageRadioButton.MouseEnter += new System.EventHandler(this.AverageRadioButton_MouseEnter);
             this.AverageRadioButton.MouseLeave += new System.EventHandler(this.AverageRadioButton_MouseLeave);
             // 
@@ -241,9 +252,10 @@
             this.FullHouseLabel.BackColor = System.Drawing.Color.Transparent;
             this.FullHouseLabel.Font = new System.Drawing.Font("Inter", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FullHouseLabel.ForeColor = System.Drawing.Color.White;
-            this.FullHouseLabel.Location = new System.Drawing.Point(80, 693);
+            this.FullHouseLabel.Location = new System.Drawing.Point(53, 656);
+            this.FullHouseLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.FullHouseLabel.Name = "FullHouseLabel";
-            this.FullHouseLabel.Size = new System.Drawing.Size(161, 28);
+            this.FullHouseLabel.Size = new System.Drawing.Size(110, 21);
             this.FullHouseLabel.TabIndex = 13;
             this.FullHouseLabel.Text = "(полное бинго)";
             this.FullHouseLabel.Visible = false;
@@ -255,9 +267,10 @@
             this.FullHouseRadioButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FullHouseRadioButton.Font = new System.Drawing.Font("Inter", 20F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FullHouseRadioButton.ForeColor = System.Drawing.Color.Transparent;
-            this.FullHouseRadioButton.Location = new System.Drawing.Point(47, 629);
+            this.FullHouseRadioButton.Location = new System.Drawing.Point(31, 615);
+            this.FullHouseRadioButton.Margin = new System.Windows.Forms.Padding(2);
             this.FullHouseRadioButton.Name = "FullHouseRadioButton";
-            this.FullHouseRadioButton.Size = new System.Drawing.Size(475, 61);
+            this.FullHouseRadioButton.Size = new System.Drawing.Size(322, 43);
             this.FullHouseRadioButton.TabIndex = 12;
             this.FullHouseRadioButton.Text = "Full House сложность";
             this.FullHouseRadioButton.UseVisualStyleBackColor = false;
@@ -273,9 +286,10 @@
             this.ModificatorLabel.Cursor = System.Windows.Forms.Cursors.Default;
             this.ModificatorLabel.Font = new System.Drawing.Font("Montserrat Black", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ModificatorLabel.ForeColor = System.Drawing.Color.White;
-            this.ModificatorLabel.Location = new System.Drawing.Point(36, 767);
+            this.ModificatorLabel.Location = new System.Drawing.Point(24, 694);
+            this.ModificatorLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ModificatorLabel.Name = "ModificatorLabel";
-            this.ModificatorLabel.Size = new System.Drawing.Size(586, 62);
+            this.ModificatorLabel.Size = new System.Drawing.Size(398, 42);
             this.ModificatorLabel.TabIndex = 14;
             this.ModificatorLabel.Text = "Выберете модификатор:";
             this.ModificatorLabel.Visible = false;
@@ -285,17 +299,18 @@
             this.ModificatorsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ModificatorsComboBox.Font = new System.Drawing.Font("Inter", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ModificatorsComboBox.Items.AddRange(new object[] {
-            "большой квадрат",
-            "малый квадрат",
-            "две линии",
-            "буква П",
-            "буква X",
-            "буква Н",
-            "буква Е",
-            "буква Т"});
-            this.ModificatorsComboBox.Location = new System.Drawing.Point(47, 832);
+            "Большой квадрат",
+            "Малый квадрат",
+            "Две линии",
+            "Буква П",
+            "Буква X",
+            "Буква Н",
+            "Буква Е",
+            "Буква Т"});
+            this.ModificatorsComboBox.Location = new System.Drawing.Point(31, 736);
+            this.ModificatorsComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.ModificatorsComboBox.Name = "ModificatorsComboBox";
-            this.ModificatorsComboBox.Size = new System.Drawing.Size(557, 36);
+            this.ModificatorsComboBox.Size = new System.Drawing.Size(373, 26);
             this.ModificatorsComboBox.TabIndex = 16;
             this.ModificatorsComboBox.Visible = false;
             this.ModificatorsComboBox.SelectedValueChanged += new System.EventHandler(this.ModificatorsComboBox_SelectedValueChanged);
@@ -307,9 +322,10 @@
             this.CountPlayers.Cursor = System.Windows.Forms.Cursors.Default;
             this.CountPlayers.Font = new System.Drawing.Font("Montserrat Black", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.CountPlayers.ForeColor = System.Drawing.Color.White;
-            this.CountPlayers.Location = new System.Drawing.Point(36, 262);
+            this.CountPlayers.Location = new System.Drawing.Point(24, 376);
+            this.CountPlayers.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CountPlayers.Name = "CountPlayers";
-            this.CountPlayers.Size = new System.Drawing.Size(502, 62);
+            this.CountPlayers.Size = new System.Drawing.Size(341, 42);
             this.CountPlayers.TabIndex = 17;
             this.CountPlayers.Text = "Количество игроков:";
             this.CountPlayers.Visible = false;
@@ -319,7 +335,8 @@
             this.CountPlayersNumericUpDown.AutoSize = true;
             this.CountPlayersNumericUpDown.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CountPlayersNumericUpDown.Font = new System.Drawing.Font("Inter", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CountPlayersNumericUpDown.Location = new System.Drawing.Point(544, 268);
+            this.CountPlayersNumericUpDown.Location = new System.Drawing.Point(363, 380);
+            this.CountPlayersNumericUpDown.Margin = new System.Windows.Forms.Padding(2);
             this.CountPlayersNumericUpDown.Maximum = new decimal(new int[] {
             4,
             0,
@@ -332,7 +349,7 @@
             0});
             this.CountPlayersNumericUpDown.Name = "CountPlayersNumericUpDown";
             this.CountPlayersNumericUpDown.ReadOnly = true;
-            this.CountPlayersNumericUpDown.Size = new System.Drawing.Size(75, 56);
+            this.CountPlayersNumericUpDown.Size = new System.Drawing.Size(50, 40);
             this.CountPlayersNumericUpDown.TabIndex = 18;
             this.CountPlayersNumericUpDown.Value = new decimal(new int[] {
             1,
@@ -348,9 +365,10 @@
             this.StartGameLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.StartGameLabel.Font = new System.Drawing.Font("Montserrat Black", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.StartGameLabel.ForeColor = System.Drawing.Color.White;
-            this.StartGameLabel.Location = new System.Drawing.Point(36, 920);
+            this.StartGameLabel.Location = new System.Drawing.Point(25, 940);
+            this.StartGameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.StartGameLabel.Name = "StartGameLabel";
-            this.StartGameLabel.Size = new System.Drawing.Size(302, 62);
+            this.StartGameLabel.Size = new System.Drawing.Size(205, 42);
             this.StartGameLabel.TabIndex = 19;
             this.StartGameLabel.Text = "Начать игру";
             this.StartGameLabel.Visible = false;
@@ -363,9 +381,10 @@
             this.ExitPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.ExitPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ExitPictureBox.Image = global::Bingo.Properties.Resources.exit;
-            this.ExitPictureBox.Location = new System.Drawing.Point(1865, 9);
+            this.ExitPictureBox.Location = new System.Drawing.Point(1862, 6);
+            this.ExitPictureBox.Margin = new System.Windows.Forms.Padding(2);
             this.ExitPictureBox.Name = "ExitPictureBox";
-            this.ExitPictureBox.Size = new System.Drawing.Size(47, 58);
+            this.ExitPictureBox.Size = new System.Drawing.Size(31, 38);
             this.ExitPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ExitPictureBox.TabIndex = 20;
             this.ExitPictureBox.TabStop = false;
@@ -379,9 +398,10 @@
             this.HomePictureBox.BackColor = System.Drawing.Color.Transparent;
             this.HomePictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.HomePictureBox.Image = global::Bingo.Properties.Resources.home;
-            this.HomePictureBox.Location = new System.Drawing.Point(1812, 9);
+            this.HomePictureBox.Location = new System.Drawing.Point(1827, 6);
+            this.HomePictureBox.Margin = new System.Windows.Forms.Padding(2);
             this.HomePictureBox.Name = "HomePictureBox";
-            this.HomePictureBox.Size = new System.Drawing.Size(47, 58);
+            this.HomePictureBox.Size = new System.Drawing.Size(31, 38);
             this.HomePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.HomePictureBox.TabIndex = 21;
             this.HomePictureBox.TabStop = false;
@@ -396,9 +416,10 @@
             this.FootballEditionInGameLabel.BackColor = System.Drawing.Color.Transparent;
             this.FootballEditionInGameLabel.Font = new System.Drawing.Font("Inter", 7F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FootballEditionInGameLabel.ForeColor = System.Drawing.Color.White;
-            this.FootballEditionInGameLabel.Location = new System.Drawing.Point(870, 118);
+            this.FootballEditionInGameLabel.Location = new System.Drawing.Point(918, 78);
+            this.FootballEditionInGameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.FootballEditionInGameLabel.Name = "FootballEditionInGameLabel";
-            this.FootballEditionInGameLabel.Size = new System.Drawing.Size(110, 21);
+            this.FootballEditionInGameLabel.Size = new System.Drawing.Size(78, 14);
             this.FootballEditionInGameLabel.TabIndex = 23;
             this.FootballEditionInGameLabel.Text = "Football Edition";
             this.FootballEditionInGameLabel.Visible = false;
@@ -409,9 +430,10 @@
             this.BingoInGameLabel.BackColor = System.Drawing.Color.Transparent;
             this.BingoInGameLabel.Font = new System.Drawing.Font("Good Vibes Pro", 50F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BingoInGameLabel.ForeColor = System.Drawing.Color.White;
-            this.BingoInGameLabel.Location = new System.Drawing.Point(830, 9);
+            this.BingoInGameLabel.Location = new System.Drawing.Point(894, 6);
+            this.BingoInGameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.BingoInGameLabel.Name = "BingoInGameLabel";
-            this.BingoInGameLabel.Size = new System.Drawing.Size(287, 139);
+            this.BingoInGameLabel.Size = new System.Drawing.Size(192, 93);
             this.BingoInGameLabel.TabIndex = 22;
             this.BingoInGameLabel.Text = "Bingo";
             this.BingoInGameLabel.Visible = false;
@@ -422,11 +444,11 @@
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1924, 1024);
+            this.ClientSize = new System.Drawing.Size(1904, 1041);
             this.Controls.Add(this.FootballEditionInGameLabel);
             this.Controls.Add(this.BingoInGameLabel);
             this.Controls.Add(this.HomePictureBox);
@@ -451,6 +473,7 @@
             this.Controls.Add(this.PlayLabel);
             this.Controls.Add(this.QuitLabel);
             this.DoubleBuffered = true;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Main";
             this.Text = "Main";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);

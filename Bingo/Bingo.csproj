@@ -49,6 +49,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bingo.cs" />
+    <Compile Include="CellData.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>

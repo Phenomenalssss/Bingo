@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,6 +14,11 @@ namespace Bingo
 {
     public partial class Main : Form
     {
+        private Image currentBackground;
+        private Image nextBackground;
+        private float fade = 0;
+        private Timer fadeTimer;
+
         public Main()
         {
             InitializeComponent();
@@ -23,17 +29,19 @@ namespace Bingo
 
         private async void Main_Load(object sender, EventArgs e)
         {
+            UIAnimator.IsAnimating = true;
+            currentBackground = Properties.Resources.menu;
             BingoLabel.Visible = false;
             FootballEditionLabel.Visible = false;
             PlayLabel.Visible = false;
             QuitLabel.Visible = false;
             await UIAnimator.FadeInForm(this);
-            await UIAnimator.FadeInControl(FootballEditionLabel, 50);
-            await UIAnimator.FadeInControl(BingoLabel, 50);
+            await UIAnimator.FadeInControl(FootballEditionLabel, 200);
+            await UIAnimator.FadeInControl(BingoLabel, 200);
             await Task.Delay(200);
-            await UIAnimator.SlideFadeIn(PlayLabel, 80);
-            await Task.Delay(150);
-            await UIAnimator.SlideFadeIn(QuitLabel, 80);
+            await UIAnimator.SlideFadeIn(PlayLabel, 50, 50);
+            await UIAnimator.SlideFadeIn(QuitLabel, 50, 50);
+            UIAnimator.IsAnimating = false;
         }
 
         private bool isClosing = false;
@@ -49,8 +57,70 @@ namespace Bingo
             }
         }
 
+        public void ChangeBackground(Image newBackground)
+        {
+            nextBackground = newBackground;
+            fade = 0;
+            fadeTimer = new Timer();
+            fadeTimer.Interval = 15;
+            fadeTimer.Tick += (s, e) =>
+            {
+                fade += 0.02f;
+
+                if (fade >= 1)
+                {
+                    fade = 1;
+                    currentBackground = nextBackground;
+                    nextBackground = null;
+                    fadeTimer.Stop();
+                }
+
+                Invalidate();
+            };
+
+            fadeTimer.Start();
+        }
+
+        private void DrawImageAlpha(Graphics g, Image img, float alpha)
+        {
+            if (img == null) return;
+
+            using (var attributes = new System.Drawing.Imaging.ImageAttributes())
+            {
+                var matrix = new System.Drawing.Imaging.ColorMatrix();
+
+                matrix.Matrix33 = alpha;
+
+                attributes.SetColorMatrix(matrix);
+
+                g.DrawImage(
+                    img,
+                    new Rectangle(0, 0, Width, Height),
+                    0,
+                    0,
+                    img.Width,
+                    img.Height,
+                    GraphicsUnit.Pixel,
+                    attributes
+                );
+            }
+        }
+
+        protected override void OnPaintBackground(PaintEventArgs e)
+        {
+            DrawImageAlpha(e.Graphics, currentBackground, 1);
+
+            if (nextBackground != null)
+            {
+                DrawImageAlpha(e.Graphics, nextBackground, fade);
+            }
+        }
+
         private void QuitLabel_Click(object sender, EventArgs e)
         {
+            if (UIAnimator.IsAnimating)
+                return;
+
             Close();
         }
 
@@ -74,32 +144,37 @@ namespace Bingo
             PlayLabel.ForeColor = Color.White;
         }
 
-        private void PlayLabel_Click(object sender, EventArgs e)
+        private async void PlayLabel_Click(object sender, EventArgs e)
         {
+            if (UIAnimator.IsAnimating)
+                return;
+
+            UIAnimator.IsAnimating = true;
             BingoLabel.Visible = false;
             FootballEditionLabel.Visible = false;
             PlayLabel.Visible = false;
             QuitLabel.Visible = false;
-            BackLabel.Visible = true;
-            FootballEditionSmallLabel.Visible = true;
-            BingoSmallLabel.Visible = true;
-            CountPlayers.Visible = true;
-            CountPlayersNumericUpDown.Visible = true;
-            DifficultLabel.Visible = true;
-            EasyRadioButton.Visible = true;
-            EasyLabel.Visible = true;
-            AverageRadioButton.Visible = true;
-            AverageLabel.Visible = true;
-            FullHouseRadioButton.Visible = true;
-            FullHouseLabel.Visible = true;
+            await UIAnimator.FadeInControl(FootballEditionSmallLabel, 200);
+            await UIAnimator.FadeInControl(BingoSmallLabel, 200);
+            await UIAnimator.SlideFadeIn(CountPlayers, 50, 50);
+            await UIAnimator.SlideFadeIn(CountPlayersNumericUpDown, 50, 50);
+            await UIAnimator.SlideFadeIn(DifficultLabel, 50, 50);
+            await UIAnimator.SlideFadeIn(EasyRadioButton, 50, 50);
+            await UIAnimator.SlideFadeIn(EasyLabel, 50, 50);
+            await UIAnimator.SlideFadeIn(AverageRadioButton, 50, 50);
+            await UIAnimator.SlideFadeIn(AverageLabel, 50, 50);
+            await UIAnimator.SlideFadeIn(FullHouseRadioButton, 50, 50);
+            await UIAnimator.SlideFadeIn(FullHouseLabel, 50, 50);
+            await UIAnimator.SlideFadeIn(BackLabel, 50, 50);
+            UIAnimator.IsAnimating = false;
         }
 
-        private void BackLabel_Click(object sender, EventArgs e)
+        private async void BackLabel_Click(object sender, EventArgs e)
         {
-            BingoLabel.Visible = true;
-            FootballEditionLabel.Visible = true;
-            PlayLabel.Visible = true;
-            QuitLabel.Visible = true;
+            if (UIAnimator.IsAnimating)
+                return;
+
+            UIAnimator.IsAnimating = true;
             BackLabel.Visible = false;
             FootballEditionSmallLabel.Visible = false;
             BingoSmallLabel.Visible = false;
@@ -117,6 +192,12 @@ namespace Bingo
             StartGameLabel.Visible = false;
             EasyRadioButton.Checked = AverageRadioButton.Checked = FullHouseRadioButton.Checked = false;
             CountPlayersNumericUpDown.Value = CountPlayersNumericUpDown.Minimum;
+            await UIAnimator.FadeInControl(FootballEditionLabel, 200);
+            await UIAnimator.FadeInControl(BingoLabel, 200);
+            await Task.Delay(200);
+            await UIAnimator.SlideFadeIn(PlayLabel, 50, 50);
+            await UIAnimator.SlideFadeIn(QuitLabel, 50, 50);
+            UIAnimator.IsAnimating = false;
         }
 
         private void BackLabel_MouseEnter(object sender, EventArgs e)
@@ -127,16 +208,6 @@ namespace Bingo
         private void BackLabel_MouseLeave(object sender, EventArgs e)
         {
             BackLabel.ForeColor = Color.White;
-        }
-
-        private void EasyRadioButton_MouseEnter(object sender, EventArgs e)
-        {
-            EasyRadioButton.ForeColor = Color.LightGray;
-        }
-
-        private void EasyRadioButton_MouseLeave(object sender, EventArgs e)
-        {
-            EasyRadioButton.ForeColor = Color.White;
         }
 
         private void AverageRadioButton_MouseEnter(object sender, EventArgs e)
@@ -159,22 +230,34 @@ namespace Bingo
             FullHouseRadioButton.ForeColor = Color.White;
         }
 
-        private void StartGame_CheckedChanged(object sender, EventArgs e)
+        private async void StartGame_CheckedChanged(object sender, EventArgs e)
         {
+            if (UIAnimator.IsAnimating)
+                return;
+
             if (EasyRadioButton.Checked || FullHouseRadioButton.Checked)
             {
-                StartGameLabel.Visible = true;
+                ModificatorLabel.Visible = false;
+                ModificatorsComboBox.Visible = false;
+                UIAnimator.IsAnimating = true;
+                await UIAnimator.SlideFadeIn(StartGameLabel, 50, 50);
+                UIAnimator.IsAnimating = false;
             }
         }
 
-        private void AverageRadioButton_CheckedChanged(object sender, EventArgs e)
+        private async void AverageRadioButton_CheckedChanged(object sender, EventArgs e)
         {
+            if (UIAnimator.IsAnimating)
+                return;
+
             if (AverageRadioButton.Checked)
             {
+                UIAnimator.IsAnimating = true;
                 StartGameLabel.Visible = false;
-                ModificatorLabel.Visible = true;
-                ModificatorsComboBox.Visible = true;
+                await UIAnimator.SlideFadeIn(ModificatorLabel, 50, 50);
+                await UIAnimator.SlideFadeIn(ModificatorsComboBox, 50, 50);
                 ModificatorsComboBox.SelectedIndex = -1;
+                UIAnimator.IsAnimating = false;
             }
             else
             {
@@ -184,15 +267,17 @@ namespace Bingo
             }
         }
 
-        private void ModificatorsComboBox_SelectedValueChanged(object sender, EventArgs e)
+        private async void ModificatorsComboBox_SelectedValueChanged(object sender, EventArgs e)
         {
-            StartGameLabel.Visible = true;
+            await UIAnimator.SlideFadeIn(StartGameLabel, 50, 50);
         }
 
         private void AverageRadioButton_Click(object sender, EventArgs e)
         {
+            if (UIAnimator.IsAnimating)
+                return;
+
             StartGameLabel.Visible = false;
-        
         }
 
         private void StartGameLabel_MouseEnter(object sender, EventArgs e)
@@ -205,10 +290,12 @@ namespace Bingo
             StartGameLabel.ForeColor = Color.White;
         }
 
-        private void StartGameLabel_Click(object sender, EventArgs e)
+        private async void StartGameLabel_Click(object sender, EventArgs e)
         {
-            ExitPictureBox.Visible = true;
-            HomePictureBox.Visible = true;
+            if (UIAnimator.IsAnimating)
+                return;
+
+            UIAnimator.IsAnimating = true;
             BackLabel.Visible = false;
             FootballEditionSmallLabel.Visible = false;
             BingoSmallLabel.Visible = false;
@@ -224,13 +311,16 @@ namespace Bingo
             ModificatorLabel.Visible = false;
             ModificatorsComboBox.Visible = false;
             StartGameLabel.Visible = false;
-            BackgroundImage = Properties.Resources.game;
+            ChangeBackground(Properties.Resources.game);
             BackgroundImageLayout = ImageLayout.Stretch;
-            FootballEditionInGameLabel.Visible = true;
-            BingoInGameLabel.Visible = true;
+            await Task.Delay(1500);
+            await UIAnimator.FadeInControl(FootballEditionInGameLabel, 200);
+            await UIAnimator.FadeInControl(BingoInGameLabel, 200);
+            await UIAnimator.FadeInControl(ExitPictureBox, 200);
+            await UIAnimator.FadeInControl(HomePictureBox, 200);
             if (EasyRadioButton.Checked)
             {
-                MessageBox.Show($"easy - {CountPlayersNumericUpDown.Value}");
+                Bingo.StartGame("Лёгкая", Convert.ToInt32(CountPlayersNumericUpDown.Value), this, 50, 120, 900, 40);
             }
             if (AverageRadioButton.Checked)
             {
@@ -240,12 +330,16 @@ namespace Bingo
             {
                 MessageBox.Show($"fullhouse - {CountPlayersNumericUpDown.Value}");
             }
+            UIAnimator.IsAnimating = false;
             EasyRadioButton.Checked = AverageRadioButton.Checked = FullHouseRadioButton.Checked = false;
             CountPlayersNumericUpDown.Value = CountPlayersNumericUpDown.Minimum;
         }
 
         private void ExitPictureBox_Click(object sender, EventArgs e)
         {
+            if (UIAnimator.IsAnimating)
+                return;
+
             DialogResult result = MessageBox.Show("Весь прогресс будет утерян, вы уверены?", "Уведомление", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             if (result == DialogResult.OK)
             {
@@ -263,23 +357,30 @@ namespace Bingo
             ExitPictureBox.Image = Properties.Resources.exit;
         }
 
-        private void HomePictureBox_Click(object sender, EventArgs e)
+        private async void HomePictureBox_Click(object sender, EventArgs e)
         {
+            if (UIAnimator.IsAnimating)
+                return;
+
             DialogResult result = MessageBox.Show("Весь прогресс будет утерян, вы уверены?", "Уведомление", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             if (result == DialogResult.OK)
             {
-                BackgroundImage = Properties.Resources.menu;
-                BackgroundImageLayout = ImageLayout.Stretch;
+                UIAnimator.IsAnimating = true;
                 ExitPictureBox.Visible = false;
                 HomePictureBox.Visible = false;
                 BingoInGameLabel.Visible = false;
                 FootballEditionInGameLabel.Visible = false;
-                BingoLabel.Visible = true;
-                FootballEditionLabel.Visible = true;
-                PlayLabel.Visible = true;
-                QuitLabel.Visible = true;
+                ChangeBackground(Properties.Resources.menu);
+                BackgroundImageLayout = ImageLayout.Stretch;
+                await Task.Delay(1500);
+                await UIAnimator.FadeInControl(FootballEditionLabel, 200);
+                await UIAnimator.FadeInControl(BingoLabel, 200);
+                await Task.Delay(200);
+                await UIAnimator.SlideFadeIn(PlayLabel, 50, 50);
+                await UIAnimator.SlideFadeIn(QuitLabel, 50, 50);
                 EasyRadioButton.Checked = AverageRadioButton.Checked = FullHouseRadioButton.Checked = false;
                 CountPlayersNumericUpDown.Value = CountPlayersNumericUpDown.Minimum;
+                UIAnimator.IsAnimating = false;
             }
         }
 
@@ -291,6 +392,16 @@ namespace Bingo
         private void HomePictureBox_MouseLeave(object sender, EventArgs e)
         {
             HomePictureBox.Image = Properties.Resources.home;
+        }
+
+        private void EasyRadioButton_MouseEnter(object sender, EventArgs e)
+        {
+            EasyRadioButton.ForeColor = Color.LightGray;
+        }
+
+        private void EasyRadioButton_MouseLeave(object sender, EventArgs e)
+        {
+            EasyRadioButton.ForeColor = Color.White;
         }
     }
 }

@@ -6,6 +6,8 @@ using System.Windows.Forms;
 
 public static class UIAnimator
 {
+    public static bool IsAnimating { get; set; } = false;
+
     public static async Task FadeInForm(Form form, int duration = 600)
     {
         form.Opacity = 0;
