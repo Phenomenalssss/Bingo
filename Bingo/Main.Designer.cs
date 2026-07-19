@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.QuitLabel = new System.Windows.Forms.Label();
             this.PlayLabel = new System.Windows.Forms.Label();
@@ -48,7 +49,14 @@
             this.CountPlayers = new System.Windows.Forms.Label();
             this.CountPlayersNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.StartGameLabel = new System.Windows.Forms.Label();
+            this.ExitPictureBox = new System.Windows.Forms.PictureBox();
+            this.HomePictureBox = new System.Windows.Forms.PictureBox();
+            this.FootballEditionInGameLabel = new System.Windows.Forms.Label();
+            this.BingoInGameLabel = new System.Windows.Forms.Label();
+            this.TimerMenu = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.CountPlayersNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ExitPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HomePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // QuitLabel
@@ -58,7 +66,7 @@
             this.QuitLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.QuitLabel.Font = new System.Drawing.Font("Montserrat Black", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.QuitLabel.ForeColor = System.Drawing.Color.White;
-            this.QuitLabel.Location = new System.Drawing.Point(219, 734);
+            this.QuitLabel.Location = new System.Drawing.Point(102, 725);
             this.QuitLabel.Name = "QuitLabel";
             this.QuitLabel.Size = new System.Drawing.Size(367, 62);
             this.QuitLabel.TabIndex = 0;
@@ -74,7 +82,7 @@
             this.PlayLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PlayLabel.Font = new System.Drawing.Font("Montserrat Black", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.PlayLabel.ForeColor = System.Drawing.Color.White;
-            this.PlayLabel.Location = new System.Drawing.Point(219, 655);
+            this.PlayLabel.Location = new System.Drawing.Point(102, 646);
             this.PlayLabel.Name = "PlayLabel";
             this.PlayLabel.Size = new System.Drawing.Size(183, 62);
             this.PlayLabel.TabIndex = 1;
@@ -89,7 +97,7 @@
             this.BingoLabel.BackColor = System.Drawing.Color.Transparent;
             this.BingoLabel.Font = new System.Drawing.Font("Good Vibes Pro", 150F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BingoLabel.ForeColor = System.Drawing.Color.White;
-            this.BingoLabel.Location = new System.Drawing.Point(115, 226);
+            this.BingoLabel.Location = new System.Drawing.Point(-2, 217);
             this.BingoLabel.Name = "BingoLabel";
             this.BingoLabel.Size = new System.Drawing.Size(858, 416);
             this.BingoLabel.TabIndex = 2;
@@ -101,7 +109,7 @@
             this.FootballEditionLabel.BackColor = System.Drawing.Color.Transparent;
             this.FootballEditionLabel.Font = new System.Drawing.Font("Inter", 20F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FootballEditionLabel.ForeColor = System.Drawing.Color.White;
-            this.FootballEditionLabel.Location = new System.Drawing.Point(267, 547);
+            this.FootballEditionLabel.Location = new System.Drawing.Point(150, 538);
             this.FootballEditionLabel.Name = "FootballEditionLabel";
             this.FootballEditionLabel.Size = new System.Drawing.Size(319, 57);
             this.FootballEditionLabel.TabIndex = 3;
@@ -114,7 +122,7 @@
             this.BackLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BackLabel.Font = new System.Drawing.Font("Montserrat Black", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.BackLabel.ForeColor = System.Drawing.Color.White;
-            this.BackLabel.Location = new System.Drawing.Point(12, 1023);
+            this.BackLabel.Location = new System.Drawing.Point(36, 997);
             this.BackLabel.Name = "BackLabel";
             this.BackLabel.Size = new System.Drawing.Size(163, 62);
             this.BackLabel.TabIndex = 4;
@@ -346,13 +354,83 @@
             this.StartGameLabel.TabIndex = 19;
             this.StartGameLabel.Text = "Начать игру";
             this.StartGameLabel.Visible = false;
+            this.StartGameLabel.Click += new System.EventHandler(this.StartGameLabel_Click);
+            this.StartGameLabel.MouseEnter += new System.EventHandler(this.StartGameLabel_MouseEnter);
+            this.StartGameLabel.MouseLeave += new System.EventHandler(this.StartGameLabel_MouseLeave);
+            // 
+            // ExitPictureBox
+            // 
+            this.ExitPictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.ExitPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ExitPictureBox.Image = global::Bingo.Properties.Resources.exit;
+            this.ExitPictureBox.Location = new System.Drawing.Point(1865, 9);
+            this.ExitPictureBox.Name = "ExitPictureBox";
+            this.ExitPictureBox.Size = new System.Drawing.Size(47, 58);
+            this.ExitPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ExitPictureBox.TabIndex = 20;
+            this.ExitPictureBox.TabStop = false;
+            this.ExitPictureBox.Visible = false;
+            this.ExitPictureBox.Click += new System.EventHandler(this.ExitPictureBox_Click);
+            this.ExitPictureBox.MouseEnter += new System.EventHandler(this.ExitPictureBox_MouseEnter);
+            this.ExitPictureBox.MouseLeave += new System.EventHandler(this.ExitPictureBox_MouseLeave);
+            // 
+            // HomePictureBox
+            // 
+            this.HomePictureBox.BackColor = System.Drawing.Color.Transparent;
+            this.HomePictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.HomePictureBox.Image = global::Bingo.Properties.Resources.home;
+            this.HomePictureBox.Location = new System.Drawing.Point(1812, 9);
+            this.HomePictureBox.Name = "HomePictureBox";
+            this.HomePictureBox.Size = new System.Drawing.Size(47, 58);
+            this.HomePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.HomePictureBox.TabIndex = 21;
+            this.HomePictureBox.TabStop = false;
+            this.HomePictureBox.Visible = false;
+            this.HomePictureBox.Click += new System.EventHandler(this.HomePictureBox_Click);
+            this.HomePictureBox.MouseEnter += new System.EventHandler(this.HomePictureBox_MouseEnter);
+            this.HomePictureBox.MouseLeave += new System.EventHandler(this.HomePictureBox_MouseLeave);
+            // 
+            // FootballEditionInGameLabel
+            // 
+            this.FootballEditionInGameLabel.AutoSize = true;
+            this.FootballEditionInGameLabel.BackColor = System.Drawing.Color.Transparent;
+            this.FootballEditionInGameLabel.Font = new System.Drawing.Font("Inter", 7F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FootballEditionInGameLabel.ForeColor = System.Drawing.Color.White;
+            this.FootballEditionInGameLabel.Location = new System.Drawing.Point(870, 118);
+            this.FootballEditionInGameLabel.Name = "FootballEditionInGameLabel";
+            this.FootballEditionInGameLabel.Size = new System.Drawing.Size(110, 21);
+            this.FootballEditionInGameLabel.TabIndex = 23;
+            this.FootballEditionInGameLabel.Text = "Football Edition";
+            this.FootballEditionInGameLabel.Visible = false;
+            // 
+            // BingoInGameLabel
+            // 
+            this.BingoInGameLabel.AutoSize = true;
+            this.BingoInGameLabel.BackColor = System.Drawing.Color.Transparent;
+            this.BingoInGameLabel.Font = new System.Drawing.Font("Good Vibes Pro", 50F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BingoInGameLabel.ForeColor = System.Drawing.Color.White;
+            this.BingoInGameLabel.Location = new System.Drawing.Point(830, 9);
+            this.BingoInGameLabel.Name = "BingoInGameLabel";
+            this.BingoInGameLabel.Size = new System.Drawing.Size(287, 139);
+            this.BingoInGameLabel.TabIndex = 22;
+            this.BingoInGameLabel.Text = "Bingo";
+            this.BingoInGameLabel.Visible = false;
+            // 
+            // TimerMenu
+            // 
+            this.TimerMenu.Interval = 20;
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1318, 1050);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1924, 1024);
+            this.Controls.Add(this.FootballEditionInGameLabel);
+            this.Controls.Add(this.BingoInGameLabel);
+            this.Controls.Add(this.HomePictureBox);
+            this.Controls.Add(this.ExitPictureBox);
             this.Controls.Add(this.StartGameLabel);
             this.Controls.Add(this.CountPlayersNumericUpDown);
             this.Controls.Add(this.CountPlayers);
@@ -372,10 +450,14 @@
             this.Controls.Add(this.BingoLabel);
             this.Controls.Add(this.PlayLabel);
             this.Controls.Add(this.QuitLabel);
+            this.DoubleBuffered = true;
             this.Name = "Main";
             this.Text = "Main";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
             this.Load += new System.EventHandler(this.Main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.CountPlayersNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ExitPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HomePictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -402,6 +484,11 @@
         private System.Windows.Forms.Label CountPlayers;
         private System.Windows.Forms.NumericUpDown CountPlayersNumericUpDown;
         private System.Windows.Forms.Label StartGameLabel;
+        private System.Windows.Forms.PictureBox ExitPictureBox;
+        private System.Windows.Forms.PictureBox HomePictureBox;
+        private System.Windows.Forms.Label FootballEditionInGameLabel;
+        private System.Windows.Forms.Label BingoInGameLabel;
+        private System.Windows.Forms.Timer TimerMenu;
     }
 }
 
